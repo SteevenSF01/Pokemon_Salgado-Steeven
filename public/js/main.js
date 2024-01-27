@@ -7,6 +7,8 @@ FUNCTION.startGame()
 console.log(INSTANCE.bulbizarre);
 console.log(INSTANCE.salameche);
 console.log(INSTANCE.carapuce);
+// let choixJoueur = [INSTANCE.bulbizarre]
+// console.log(choixJoueur[0].vie);
 // bulbasaur.végé_Griffe();
 
 // console.log(INSTANCE.salameche);
