@@ -1,25 +1,3 @@
-    const ecranBienvenue = document.getElementById("ecranBienvenue");
-    const regles = document.getElementById("regles")
+import * as FUNCTION from "./function.js"
 
-    const gameScreen = document.getElementById("ecranJeu");
-
-    const startButton = document.getElementById("start-button");
-
-    const buttonRegles = document.getElementById("buttonRegles")
-
-    const selectionPerso = document.getElementById("selectionPerso")
-    console.log(regles);
-    
-
-    window.addEventListener('load', function() {
-        
-        startButton.addEventListener("click", () => {
-            ecranBienvenue.style.display = "none"
-            regles.style.display = "block"
-        });
-        
-        buttonRegles.addEventListener("click" , () => {
-            regles.style.display = "none"
-            selectionPerso.style.display = "flex"
-        })
-    });
+FUNCTION.startGame()
