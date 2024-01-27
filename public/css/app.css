@@ -1,0 +1,201 @@
+@font-face {
+    font-family: Pokemon;
+    src: url(./../src/font/PokemonGb-RAeo.ttf);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: Pokemon;
+}
+
+.cacher {
+    display: none;
+}
+
+/********************************/
+/*********** Bienvenue **********/
+/********************************/
+
+#ecranBienvenue {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    display: flex;
+    /*****************************   <========= *******************************/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    background-image: url(./../src/img/bienvenue.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.bienvenue {
+    font-size: 30px;
+    background: -webkit-linear-gradient(150deg,
+            rgb(12, 65, 241),
+            rgb(255, 230, 1));
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+button {
+    background-image: linear-gradient(to right,
+            rgb(12, 65, 241) 0%,
+            #f4d03f 51%,
+            rgb(12, 65, 241) 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    font-size: 16px;
+    width: 250px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-family: Pokemon;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+}
+
+button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+/************************************/
+/*********** Fin Bienvenue **********/
+/************************************/
+
+
+
+
+
+/***************************/
+/********** Règles *********/
+/***************************/
+#regles {
+    height: 100vh;
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./../src/img/regles.png);
+    background-size: cover;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    padding: 20px;
+
+}
+
+#regles h4,
+h1 {
+    background: -webkit-linear-gradient(150deg,
+            rgb(12, 65, 241),
+            rgb(255, 230, 1));
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+#regles p {
+    width: 75%;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.buttonRegles {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+}
+
+/*******************************/
+/********** Fin Règles *********/
+/*******************************/
+
+
+/**************************************/
+/*********** Selection Perso **********/
+/**************************************/
+
+#selectionPerso {
+    height: 97vh;
+    width: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(./../src/img/choix-perso.png);
+    background-size: cover;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+#selectionPerso div {
+    width: 300px;
+    height: 300px;
+}
+
+#selectionPerso p{
+    color: white;
+}
+
+.tortank {
+    border: solid 4px black;
+    box-shadow: 0px 0px 15px 12px rgba(42, 66, 130, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 12px rgba(42, 66, 130, 0.75);
+    -moz-box-shadow: 0px 0px 15px 12px rgba(42, 66, 130, 0.75);
+    overflow: hidden;
+}
+
+.tortank img:hover {
+    transform: scale(1.1);
+    transition: 1.5s ease;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+}
+
+.charmander {
+    border: 4px black solid;
+    box-shadow: 0px 0px 15px 12px rgba(147, 10, 14, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 12px rgba(147, 10, 14, 0.75);
+    -moz-box-shadow: 0px 0px 15px 12px rgba(147, 10, 14, 0.75);
+    overflow: hidden;
+}
+
+.charmander img:hover {
+    transform: scale(1.1);
+    transition: 1.5s ease;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+}
+
+.bulbasaur {
+    border: 4px black solid;
+    box-shadow: 0px 0px 15px 12px rgba(48, 187, 134, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 12px rgba(48, 187, 134, 0.75);
+    -moz-box-shadow: 0px 0px 15px 12px rgba(48, 187, 134, 0.75);
+    overflow: hidden;
+}
+
+.bulbasaur img:hover {
+    transform: scale(1.1);
+    transition: 1.5s ease;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+
+}

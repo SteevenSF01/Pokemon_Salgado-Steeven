@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/app.css">
+    <title>Pokemon</title>
+</head>
+
+<body>
+    <div id="ecranBienvenue">
+        <h1 class="bienvenue" style="color: white;">Bienvenue à Pokémon Battle</h1>
+        <button id="start-button">Commencer</button>
+    </div>
+
+    <div id="regles">
+        <h1>Les règles du jeu :</h1> <br>
+
+        <h4>Sélection du Personnage :</h4>
+        <p>
+            - Chaque joueur choisit son personnage parmi une liste de personnages disponibles avant le début du jeu.
+        </p> <br>
+
+        <h4>
+            Capacités des Personnages :
+        </h4>
+        <p>
+            Chaque personnage possède quatre attaques uniques. Les joueurs peuvent sélectionner parmi ces attaques pour
+            infliger des dégâts à leur adversaire.
+        </p> <br>
+
+        <h4>
+            Déroulement du Combat :
+        </h4>
+        <p>
+            - Le combat se déroule par tours. Chaque joueur attaque à son tour en choisissant une des quatre attaques
+            disponibles pour son personnage. <br> <br>
+            - Les dégâts infligés dépendent de la puissance de l'attaque sélectionnée et des caractéristiques du
+            personnage ciblé.
+        </p> <br>
+
+        <h4>
+            Détermination du Vainqueur :
+        </h4>
+        <p>
+            - Le combat se poursuit jusqu'à ce que la santé d'un des personnages atteigne zéro. <br><br>
+            - Le joueur dont le personnage conserve des points de vie remporte le combat et est déclaré vainqueur.
+        </p>
+        <button class="buttonRegles" id="buttonRegles">Suivant</button>
+    </div>
+
+    <div id="selectionPerso">
+        <div style="margin-bottom: 250px;">
+            <p style="color: white;">
+                Bulbizarre
+            </p>
+            <div class="tortank">
+                <img src="./public/src/img/tortank.png" alt="" style="height: 100%; width: 100%;">
+            </div>
+            <p>
+                vie :
+            </p>
+            <p>
+                Attaque :
+            </p>
+            <p>
+                Spécialité :
+            </p>
+            <p >
+                Autre :
+            </p>
+        </div>
+
+        <div style="margin-bottom: 250px;">
+            <p style="color: white;">
+                Salamèche
+            </p>
+            <div class="charmander">
+                <img src="./public/src/img/charmander.png" alt="" style="height: 100%; width: 100%;">
+            </div>
+            <p>
+                vie :
+            </p>
+            <p>
+                Attaque :
+            </p>
+            <p>
+                Spécialité :
+            </p>
+            <p>
+                Autre :
+            </p>
+        </div>
+            
+        <div style="margin-bottom: 250px;">
+            <p style="color: white;">
+                Carapuce
+            </p>
+
+            <div class="bulbasaur">
+                <img src="./public/src/img/bulbasaur.png" alt="" style="height: 100%; width: 100%;">
+            </div>
+            <p>
+                vie :
+            </p>
+            <p>
+                Attaque :
+            </p>
+            <p>
+                Spécialité :
+            </p>
+            <p>
+                Autre :
+            </p>
+        </div>
+    </div>
+
+
+    <div id="opponent">
+
+    </div>
+
+    <div id="ecranJeu">
+
+    </div>
+
+
+
+    <script type="module" src="./public/js/main.js"></script>
+</body>
+
+</html>
