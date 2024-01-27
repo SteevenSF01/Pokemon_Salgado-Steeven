@@ -18,3 +18,5 @@ console.log(INSTANCE.carapuce);
 // INSTANCE.salameche.queue_de_Fer(INSTANCE.bulbizarre)
 // console.log(INSTANCE.salameche);
 // console.log(INSTANCE.bulbizarre);
+
+// console.log(INSTANCE.carapuceStats[2]);

@@ -9,11 +9,12 @@ class Pokemon {
 //! *************************** BULBIZARRE ***************************
 
 export class Bulbizarre extends Pokemon {
-  constructor(nom, vie, attaque, terre) {
+  constructor(nom, vie, attaque,specialite, terre) {
     super(nom, vie, attaque);
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
+    this.specialite = specialite
     this.terre = terre;
   }
   végé_Griffe(adversaire) {
@@ -66,11 +67,12 @@ export class Bulbizarre extends Pokemon {
 //! ***************************** SALAMECHE ****************************
 
 export class Salameche extends Pokemon {
-  constructor(nom, vie, attaque, feu) {
-    super(nom, vie, attaque);
+  constructor(nom, vie, attaque,specialite, feu) {
+    super(nom, vie, attaque );
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
+    this.specialite = specialite
     this.feu = feu;
   }
   flammèche(adversaire) {
@@ -121,11 +123,12 @@ export class Salameche extends Pokemon {
 //! *********************** CARAPUCE *********************
 
 export class Carapuce extends Pokemon {
-  constructor(nom, vie, attaque, eau) {
-    super(nom, vie, attaque);
+  constructor(nom, vie, attaque, specialite,eau) {
+    super(nom, vie, attaque );
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
+    this.specialite = specialite
     this.eau = eau;
   }
   Pistolet_à_O(adversaire) {
