@@ -1,11 +1,4 @@
-export const ecranBienvenue = document.getElementById("ecranBienvenue");
-
-export const regles = document.getElementById("regles")
-
-export const gameScreen = document.getElementById("ecranJeu");
-
-export const startButton = document.getElementById("start-button");
-
-export const buttonRegles = document.getElementById("buttonRegles")
-
-export const selectionPerso = document.getElementById("selectionPerso")
+import * as CLASS from "./class.js"
+export let bulbizarre = new CLASS.Bulbizarre ("Bulbizarre", 1300 , 110,0)
+export let salameche = new CLASS.Salameche("Salamèche", 1200, 130 ,0)
+export let carapuce = new CLASS.Carapuce("Carapuce",1250,110 ,0)
