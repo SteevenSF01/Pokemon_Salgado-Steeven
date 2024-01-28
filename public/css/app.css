@@ -25,7 +25,7 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
-    display: flex;
+    display: none;
     /*****************************   <========= *******************************/
     justify-content: center;
     align-items: center;
@@ -203,3 +203,19 @@ h1 {
 /******************************************/
 /*********** Fin Selection Perso **********/
 /******************************************/
+
+/**************************************/
+/**************** Arene ***************/
+/**************************************/
+
+#arene {
+    height: 97vh;
+    width: 100%;
+    /* display: flex; */
+    display: block;
+    background-image: url(./../src/img/arena.jpg);
+    background-size: 100% 120%;
+    /* background-position-y: -150px; */
+    background-repeat: no-repeat;
+    padding: 20px;
+}
