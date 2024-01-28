@@ -24,8 +24,8 @@ body {
 #ecranBienvenue {
     height: 100vh;
     width: 100%;
-    display: flex;
     display: none;
+    display: flex;
     /*****************************   <========= *******************************/
     justify-content: center;
     align-items: center;
@@ -209,14 +209,16 @@ h1 {
 /**************************************/
 
 #arene {
-    height: 100vh;
+    height: 99vh;
     width: 100%;
     margin: 0;
-    padding: 0;
-    display: flex;
+    padding: 15px;
+    display: none;
     flex-direction: column;
     background-image: url(./../src/img/arena.jpg);
+    background-size: cover;
     background-size: 100% 100%;
+    /* background-position-y: -100px; */
     background-repeat: no-repeat;
 }
 
@@ -235,8 +237,6 @@ position: relative;
     height: 100px;
     background-color: white;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 10px;
     border: 2px double black;
     display: flex;
     flex-direction: column;
@@ -259,16 +259,23 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    border: 1px solid black;
+    border: 1.5px solid black;
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
-    top: 10px;
+    top: 1px;
     left: 300px;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+    font-family: Pokemon;
+
 }
 
 
 /****************** Fin Adversaire *************/
+
+
+/**************** Joueur ****************/
+
 .joueurContainer{
     width: 100%;
     height: 50%;
@@ -276,6 +283,7 @@ position: relative;
     justify-content: end;
     align-items: end;
     position: relative;
+    padding-bottom: 10px;
     /* background-color: purple; */
 
 }
@@ -284,8 +292,6 @@ position: relative;
     height: 100px;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
     border: 2px double black;
     display: flex;
     flex-direction: column;
@@ -308,10 +314,13 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
     bottom: 10px;
     right: 300px;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+    font-family: Pokemon;
+
 }

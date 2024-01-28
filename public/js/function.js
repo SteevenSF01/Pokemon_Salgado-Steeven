@@ -15,9 +15,14 @@ let ecranBulbizarre = document.querySelector(".bulbizarre");
 let ecranSalameche = document.querySelector(".salameche");
 let ecrans = [ecranBulbizarre, ecranCarapuce, ecranSalameche];
 
+// Arene
+let buttonAdv = document.querySelectorAll(".buttonAttaqueAdv");
+let buttonJoueur = document.querySelectorAll(".buttonAttaqueJr");
+let methodeAttaqueAdv = "";
+let methodeAttaqueJoueur = "";
 
 let choixJoueur = "";
-let choixAdversaire = ""
+let choixAdversaire = "";
 
 export function startGame() {
   window.addEventListener("load", function () {
@@ -49,30 +54,78 @@ export function startGame() {
 
     // console.log(INSTANCE.personnages);
 
-    ecrans.forEach((element) => {
-      element.addEventListener("click", () => {
-        if ((element.className == "bulbizarre")) {
+    ecrans.forEach((perso) => {
+      perso.addEventListener("click", () => {
+        if (perso.className == "bulbizarre") {
           choixJoueur = INSTANCE.bulbizarre;
           INSTANCE.personnages.splice(0, 1);
-        //   console.log(INSTANCE.personnages);
-        } else if ((element.className == "carapuce")) {
+        } else if (perso.className == "carapuce") {
           choixJoueur = INSTANCE.carapuce;
           INSTANCE.personnages.splice(1, 1);
-        //   console.log(INSTANCE.personnages);
-        } else if ((element.className == "salameche")) {
+        } else if (perso.className == "salameche") {
           choixJoueur = INSTANCE.salameche;
           INSTANCE.personnages.splice(2, 1);
-        //   console.log(INSTANCE.personnages);
         }
-        choixAdversaire = INSTANCE.personnages[Math.floor(Math.random() * INSTANCE.personnages.length)]
+        choixAdversaire =
+          INSTANCE.personnages[
+            Math.floor(Math.random() * INSTANCE.personnages.length)
+          ];
+        selectionPerso.style.display = "none";
+        document.getElementById("arene").style.display = "block";
         console.log(`Choix adversaire ${choixAdversaire.nom}`);
         console.log(`Choix joueur ${choixJoueur.nom}`); //! si je sors, ca ne marche plus
 
         // while (choixAdversaire.vie > 0 && choixJoueur.vie > 0) {
-            
         // }
-    });
+        //! innerText adversaire
+        document
+          .querySelector(".barreAdversaire")
+          .querySelector("p").innerText = choixAdversaire.nom;
+        document
+          .querySelector(".barreAdversaire")
+          .querySelectorAll("p")[1].innerText +=
+          " " + choixAdversaire.vie + "HP";
+        document.querySelector(".elementPokemonAdv").innerText +=
+          " " + choixAdversaire.element;
 
+        //? Filtrer les methodes et les remplacer dans les buttons
+        methodeAttaqueAdv = Object.getOwnPropertyNames(
+          Object.getPrototypeOf(choixAdversaire)
+        ).filter((property) => property !== "constructor");
+
+        buttonAdv.forEach((button, index) => {
+          button.innerHTML = methodeAttaqueAdv[index];
+          button.addEventListener("click", () => {
+              let nomMethodes = methodeAttaqueAdv[index]
+            choixAdversaire[nomMethodes]()
+            console.log("attaquer");
+          })
+        });
+
+        //! innerText Joueur
+        document.querySelector(".barreJoueur").querySelector("p").innerText =
+          choixJoueur.nom;
+        document
+          .querySelector(".barreJoueur")
+          .querySelectorAll("p")[1].innerText += " " + choixJoueur.vie + "HP";
+        document.querySelector(".elementPokemonJoueur").innerText +=
+          " " + choixAdversaire.element;
+
+        //? Filtrer les methodes et les remplacer dans les buttons
+        methodeAttaqueJoueur = Object.getOwnPropertyNames(
+          Object.getPrototypeOf(choixJoueur)
+        ).filter((property) => property !== "constructor");
+
+        buttonJoueur.forEach((button, index) => {
+          button.innerHTML = methodeAttaqueJoueur[index];
+          button.addEventListener("click", () => {
+            let nomMethodes = methodeAttaqueJoueur[index]
+          choixJoueur[nomMethodes]()
+          console.log("attaquer");
+        })
+
+        });
+      });
     });
   });
 }

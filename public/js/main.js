@@ -1,22 +1,24 @@
-import * as CLASS from "./class.js"
-import * as INSTANCE  from "./instance.js"
-import * as FUNCTION from "./function.js"
+import * as CLASS from "./class.js";
+import * as INSTANCE from "./instance.js";
+import * as FUNCTION from "./function.js";
 
-FUNCTION.startGame()
+FUNCTION.startGame();
 
-console.log(INSTANCE.bulbizarre);
+console.log(INSTANCE.carapuce);
 console.log(INSTANCE.salameche);
 console.log(INSTANCE.carapuce);
-// let choixJoueur = [INSTANCE.bulbizarre]
-// console.log(choixJoueur[0].vie);
-// bulbasaur.végé_Griffe();
 
-// console.log(INSTANCE.salameche);
-// console.log(INSTANCE.bulbizarre);
 
-// INSTANCE.bulbizarre.bombe_Acide(INSTANCE.salameche)
-// INSTANCE.salameche.queue_de_Fer(INSTANCE.bulbizarre)
-// console.log(INSTANCE.salameche);
-// console.log(INSTANCE.bulbizarre);
+// let metodosDeAtaque = Object.getOwnPropertyNames(Object.getPrototypeOf(INSTANCE.bulbizarre)).filter(function (property) {
+//     return typeof INSTANCE.bulbizarre[property] === 'function' && property !== 'constructor';
+// });
+// metodosDeAtaque.forEach(function (metodo) {
+//     console.log(metodo);
+// });
+// console.log(methodeAttaqueAdv);
 
-// console.log(INSTANCE.carapuceStats[2]);
+
+// let test = {
+//     vie : 1000
+// }
+// INSTANCE.bulbizarre.methodes.fouet_Lianes(test)
