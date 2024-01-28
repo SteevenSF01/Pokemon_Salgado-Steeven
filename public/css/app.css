@@ -259,15 +259,22 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    border: 1.5px solid black;
     border-radius: 10px;
+    gap: 5px;
     overflow: hidden;
     position: absolute;
     top: 1px;
     left: 300px;
-    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
     font-family: Pokemon;
+}
 
+.buttonAversaire button{
+    font-size: 9px;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
+    border: none;
+    font-family: Pokemon;
+    border: solid black 2px;
+    border-radius: 10px;
 }
 
 
@@ -314,7 +321,7 @@ position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    border: 2px solid black;
+    gap: 5px;
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
@@ -322,5 +329,14 @@ position: relative;
     right: 300px;
     cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
     font-family: Pokemon;
+}
 
+.buttonJoueur button{
+    font-size: 9px;
+    border: none;
+    border-radius: 10px;
+    border: solid black 2px;
+    background-color: white;
+    font-family: Pokemon;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
 }
