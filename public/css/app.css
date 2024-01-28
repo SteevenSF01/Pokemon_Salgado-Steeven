@@ -48,7 +48,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-button {
+.buttonSuivant {
     background-image: linear-gradient(to right,
             rgb(12, 65, 241) 0%,
             #f4d03f 51%,
@@ -69,7 +69,7 @@ button {
     cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;
 }
 
-button:hover {
+.buttonSuivant:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
@@ -209,13 +209,109 @@ h1 {
 /**************************************/
 
 #arene {
-    height: 97vh;
+    height: 100vh;
     width: 100%;
-    /* display: flex; */
-    display: block;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     background-image: url(./../src/img/arena.jpg);
-    background-size: 100% 120%;
-    /* background-position-y: -150px; */
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    padding: 20px;
+}
+
+
+/*************** Adversaire ***************/
+
+.adversaireContainer{
+width: 100%;
+height: 50%;
+/* background-color: red; */
+position: relative;
+}
+
+.barreAdversaire{
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 2px double black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.jaugeAdversaire{
+    width: 250px;
+    height: 20px;
+    background-color: #ccc;
+}
+.viePerduAdv{
+    height: 100%;
+    background-color: #4caf50;
+}
+
+.buttonAversaire{
+    width: 250px;
+    height: 122px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 300px;
+}
+
+
+/****************** Fin Adversaire *************/
+.joueurContainer{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: relative;
+    /* background-color: purple; */
+
+}
+.barreJoueur{
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 2px double black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.jaugeJoueur{
+    width: 250px;
+    height: 20px;
+    background-color: #ccc;
+}
+.viePerduJoueur{
+    height: 100%;
+    background-color: #4caf50;
+}
+
+.buttonJoueur{
+    width: 250px;
+    height: 122px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 10px;
+    right: 300px;
 }

@@ -11,7 +11,7 @@
 <body>
     <div id="ecranBienvenue">
         <h1 class="bienvenue" style="color: white;">Bienvenue à Pokémon Battle</h1>
-        <button id="start-button">Commencer</button>
+        <button id="start-button" class="buttonSuivant">Commencer</button>
     </div>
 
     <div id="regles">
@@ -47,7 +47,7 @@
             - Le combat se poursuit jusqu'à ce que la santé d'un des personnages atteigne zéro. <br><br>
             - Le joueur dont le personnage conserve des points de vie remporte le combat et est déclaré vainqueur.
         </p>
-        <button class="buttonRegles" id="buttonRegles">Suivant</button>
+        <button class="buttonRegles buttonSuivant" id="buttonRegles">Suivant</button>
     </div>
 
     <div id="selectionPerso">
@@ -109,7 +109,52 @@
 
 
     <div id="arene">
+        <div class="adversaireContainer">
+
+            <div class="barreAdversaire">
+                <p style="font-size: 12px; display: flex; justify-content: space-between;">
+                    Nom Pokemon <span style="padding-right: 10px;"> element</span>
+                </p>
+                <p style="font-size: 10px;">
+                    Point de vie :
+                </p>
+
+                <div class="jaugeAdversaire">
+                    <div class="viePerduAdv">
+
+                    </div>
+                </div>
+            </div>
+            <div class="buttonAversaire">
+                <button class="buttonAttaque">Attaque</button>
+                <button class="buttonAttaque">Attaque</button>
+                <button class="buttonAttaque">Attaque</button>
+                <button class="buttonAttaque">Attaque</button>
+            </div>
+        </div>
         
+        <div class="joueurContainer">
+            <div class="barreJoueur">
+                <p style="font-size: 12px; display: flex; justify-content: space-between;">
+                    Nom Pokemon <span style="padding-right: 10px;"> element</span>
+                </p>
+                <p style="font-size: 10px;">
+                    Point de vie :
+                </p>
+
+                <div class="jaugeJoueur">
+                    <div class="viePerduJoueur">
+
+                    </div>
+                </div>
+            </div>
+            <div class="buttonJoueur">
+                <button class="buttonAttaque">Attaque</button>
+                <button class="buttonAttaque">Attaque</button>
+                <button class="buttonAttaque">Attaque</button>
+                <button class="buttonAttaque">Attaque</button>
+            </div>
+        </div>
     </div>
 
 
