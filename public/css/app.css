@@ -24,8 +24,8 @@ body {
 #ecranBienvenue {
     height: 100vh;
     width: 100%;
-    display: none;
     display: flex;
+    /* display: none; */
     /*****************************   <========= *******************************/
     justify-content: center;
     align-items: center;
@@ -231,6 +231,13 @@ height: 50%;
 /* background-color: red; */
 position: relative;
 }
+.adversaireContainer img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 400px;
+}
 
 .barreAdversaire{
     width: 250px;
@@ -254,7 +261,7 @@ position: relative;
 }
 
 .buttonAversaire{
-    width: 250px;
+    width: 280px;
     height: 122px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -291,8 +298,14 @@ position: relative;
     align-items: end;
     position: relative;
     padding-bottom: 10px;
-    /* background-color: purple; */
+}
 
+.joueurContainer img{
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    width: 400px;
+    height: 400px;
 }
 .barreJoueur{
     width: 250px;
@@ -316,7 +329,7 @@ position: relative;
 }
 
 .buttonJoueur{
-    width: 250px;
+    width: 280px;
     height: 122px;
     display: grid;
     grid-template-columns: 1fr 1fr;

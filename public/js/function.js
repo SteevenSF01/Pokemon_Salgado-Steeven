@@ -1,23 +1,16 @@
 import * as INSTANCE from "./instance.js";
+import * as CIBLAGE from "./ciblage.js";
 
-// Ecran Bienvenue
-let ecranBienvenue = document.getElementById("ecranBienvenue");
-let startButton = document.getElementById("start-button");
+function checkVie(pokemon1, pokemon2) {
+  if (pokemon1.vie <= 0) {
+    console.log(`${pokemon1.nom} à perdu`);
+    return false
+  } else if (pokemon2.vie <= 0) {
+    console.log(`${pokemon2.nom} à perdu`);
+    return false
+  }
+}
 
-// Ecran Regles
-let regles = document.getElementById("regles");
-let buttonRegles = document.getElementById("buttonRegles");
-
-// Ecran Selection Personnages
-let selectionPerso = document.getElementById("selectionPerso");
-let ecranCarapuce = document.querySelector(".carapuce");
-let ecranBulbizarre = document.querySelector(".bulbizarre");
-let ecranSalameche = document.querySelector(".salameche");
-let ecrans = [ecranBulbizarre, ecranCarapuce, ecranSalameche];
-
-// Arene
-let buttonAdv = document.querySelectorAll(".buttonAttaqueAdv");
-let buttonJoueur = document.querySelectorAll(".buttonAttaqueJr");
 let methodeAttaqueAdv = "";
 let methodeAttaqueJoueur = "";
 
@@ -27,15 +20,15 @@ let choixAdversaire = "";
 export function startGame() {
   window.addEventListener("load", function () {
     //! Ecran Bienvenue
-    startButton.addEventListener("click", () => {
-      ecranBienvenue.style.display = "none";
-      regles.style.display = "block";
+    CIBLAGE.startButton.addEventListener("click", () => {
+      CIBLAGE.ecranBienvenue.style.display = "none";
+      CIBLAGE.regles.style.display = "block";
     });
 
     //! Ecran regles
     buttonRegles.addEventListener("click", () => {
-      regles.style.display = "none";
-      selectionPerso.style.display = "flex";
+      CIBLAGE.regles.style.display = "none";
+      CIBLAGE.selectionPerso.style.display = "flex";
     });
 
     // //! Choix Personnages
@@ -54,7 +47,7 @@ export function startGame() {
 
     // console.log(INSTANCE.personnages);
 
-    ecrans.forEach((perso) => {
+    CIBLAGE.ecrans.forEach((perso) => {
       perso.addEventListener("click", () => {
         if (perso.className == "bulbizarre") {
           choixJoueur = INSTANCE.bulbizarre;
@@ -70,62 +63,90 @@ export function startGame() {
           INSTANCE.personnages[
             Math.floor(Math.random() * INSTANCE.personnages.length)
           ];
-        selectionPerso.style.display = "none";
+
+        // image adversaire
+
+        if (choixAdversaire.nom == "Bulbizarre") {
+          CIBLAGE.imageAdv.src = INSTANCE.imagesAdversaire.option1;
+        } else if (choixAdversaire.nom == "Salamèche") {
+          CIBLAGE.imageAdv.src = INSTANCE.imagesAdversaire.option3;
+        } else if (choixAdversaire.nom == "Carapuce") {
+          CIBLAGE.imageAdv.src = INSTANCE.imagesAdversaire.option2;
+        }
+
+        // image joueur
+
+        if (choixJoueur.nom == "Bulbizarre") {
+          CIBLAGE.imageJoueur.src = INSTANCE.imagesJoueur.option1;
+        } else if (choixJoueur.nom == "Salamèche") {
+          CIBLAGE.imageJoueur.src = INSTANCE.imagesJoueur.option3;
+        } else if (choixJoueur.nom == "Carapuce") {
+          CIBLAGE.imageJoueur.src = INSTANCE.imagesJoueur.option2;
+        }
+        CIBLAGE.selectionPerso.style.display = "none";
         document.getElementById("arene").style.display = "block";
         console.log(`Choix adversaire ${choixAdversaire.nom}`);
-        console.log(`Choix joueur ${choixJoueur.nom}`); //! si je sors, ca ne marche plus
+        console.log(`Choix joueur ${choixJoueur.nom}`);
 
-        // while (choixAdversaire.vie > 0 && choixJoueur.vie > 0) {
-        // }
-        //! innerText adversaire
-        document
-          .querySelector(".barreAdversaire")
-          .querySelector("p").innerText = choixAdversaire.nom;
-        document
-          .querySelector(".barreAdversaire")
-          .querySelectorAll("p")[1].innerText +=
-          " " + choixAdversaire.vie + "HP";
+        // -------------- innerText adversaire
+        CIBLAGE.lesPAdv[0].innerText = choixAdversaire.nom;
+        CIBLAGE.lesPAdv[1].innerText += ` ${choixAdversaire.vie} HP`;
+
         document.querySelector(".elementPokemonAdv").innerText +=
           " " + choixAdversaire.element;
 
-        //? Filtrer les methodes et les remplacer dans les buttons
         methodeAttaqueAdv = Object.getOwnPropertyNames(
           Object.getPrototypeOf(choixAdversaire)
         ).filter((property) => property !== "constructor");
 
-        buttonAdv.forEach((button, index) => {
-          button.innerHTML = methodeAttaqueAdv[index];
-          button.addEventListener("click", () => {
-              let nomMethodes = methodeAttaqueAdv[index]
-            choixAdversaire[nomMethodes]()
-            console.log("attaquer");
-          })
-        });
-
-        //! innerText Joueur
-        document.querySelector(".barreJoueur").querySelector("p").innerText =
-          choixJoueur.nom;
-        document
-          .querySelector(".barreJoueur")
-          .querySelectorAll("p")[1].innerText += " " + choixJoueur.vie + "HP";
+        //  ------------ innerText Joueur--------
+        CIBLAGE.lesPj[0].innerText = choixJoueur.nom;
+        CIBLAGE.lesPj[1].innerText += `${choixJoueur.vie} HP`;
         document.querySelector(".elementPokemonJoueur").innerText +=
-          " " + choixAdversaire.element;
+          `Element : ${choixJoueur.element}`;
 
         //? Filtrer les methodes et les remplacer dans les buttons
         methodeAttaqueJoueur = Object.getOwnPropertyNames(
           Object.getPrototypeOf(choixJoueur)
         ).filter((property) => property !== "constructor");
 
-        buttonJoueur.forEach((button, index) => {
+        CIBLAGE.buttonAdv.forEach((button, index) => {
+          button.innerHTML = methodeAttaqueAdv[index];
+          button.addEventListener("click", () => {
+            let randomIndex = Math.floor(Math.random() * methodeAttaqueAdv.length)
+            let nomMethodes = methodeAttaqueAdv[randomIndex];
+            choixAdversaire[nomMethodes](choixJoueur);
+            CIBLAGE.lesPAdv[1].innerText = `Point de vie :${choixAdversaire.vie} HP`;
+            console.log(nomMethodes);
+            checkVie(choixJoueur, choixAdversaire);
+            console.log(choixJoueur);
+          });
+        });
+
+        CIBLAGE.buttonJoueur.forEach((button, index) => {
           button.innerHTML = methodeAttaqueJoueur[index];
           button.addEventListener("click", () => {
-            let nomMethodes = methodeAttaqueJoueur[index]
-          choixJoueur[nomMethodes]()
-          console.log("attaquer");
-        })
+            let nomMethodes = methodeAttaqueJoueur[index];
+            choixJoueur[nomMethodes](choixAdversaire);
+            CIBLAGE.lesPj[1].innerText = `Points de vie :${choixJoueur.vie} HP`;
 
+            // MAJ adversaire
+            CIBLAGE.lesPAdv[1].innerText = `Points de vie : ${choixAdversaire.vie} HP`;
+            document.querySelector(".elementPokemonAdv").innerText =`Element : ${choixAdversaire.element}`;
+
+
+            //MAJ joueur 
+            document.querySelector(".elementPokemonJoueur").innerText =
+            `Element : ${choixJoueur.element}`;
+  
+
+            checkVie(choixAdversaire, choixJoueur);
+            console.log(choixAdversaire);
+          });
         });
       });
     });
   });
 }
+
+

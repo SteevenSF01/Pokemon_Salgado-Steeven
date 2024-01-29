@@ -10,7 +10,7 @@ class Pokemon {
 
 export class Bulbizarre extends Pokemon {
   constructor(nom, vie, attaque,specialite,element) {
-    super(nom, vie, attaque);
+    super(nom, vie, attaque, specialite , element);
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
@@ -40,8 +40,6 @@ végé_Griffe(adversaire) {
       this.element = 4;
     }
 
-    // continue
-    ("Daño: 50 Acción: Immobilise l'adversaire pendant un tour.");
   }
   racine_Mêlée(adversaire) {
     this.attaque = 30;
@@ -70,7 +68,7 @@ végé_Griffe(adversaire) {
 
 export class Salameche extends Pokemon {
   constructor(nom, vie, attaque,specialite, element) {
-    super(nom, vie, attaque );
+    super(nom, vie, attaque, specialite,element );
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
@@ -128,7 +126,7 @@ export class Salameche extends Pokemon {
 
 export class Carapuce extends Pokemon {
   constructor(nom, vie, attaque, specialite,element ) {
-    super(nom, vie, attaque );
+    super(nom, vie, attaque , specialite,element);
     this.nom = nom;
     this.vie = vie;
     this.attaque = attaque;
@@ -180,6 +178,6 @@ export class Carapuce extends Pokemon {
         this.vie += 50  
         console.log("Pas assez d'eau vous vous soignez")
     }
-    ("Daño: 150 Acción: Attaque puissante mais nécessite un tour de recharge après utilisation.");
+
   }
 }
