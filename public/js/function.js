@@ -103,7 +103,7 @@ export function startGame() {
         CIBLAGE.lesPj[0].innerText = choixJoueur.nom;
         CIBLAGE.lesPj[1].innerText += `${choixJoueur.vie} HP`;
         document.querySelector(".elementPokemonJoueur").innerText +=
-          `Element : ${choixJoueur.element}`;
+          ` ${choixJoueur.element}`;
 
         //? Filtrer les methodes et les remplacer dans les buttons
         methodeAttaqueJoueur = Object.getOwnPropertyNames(
